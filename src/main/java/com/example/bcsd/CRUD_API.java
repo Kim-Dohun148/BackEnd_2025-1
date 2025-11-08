@@ -36,12 +36,10 @@ public class CRUD_API {
     @PutMapping("/user/{id}")
     public void setUser(
             @PathVariable("id") String id,
-            @RequestParam("age") int age,
-            @RequestParam("name") String name)
+            @RequestBody User userChange)
     {
-        User user = userMap.get(id);
-        user.setAge(age);
-        user.setName(name);
+        userMap.get(id).setAge(userChange.getAge());
+        userMap.get(id).setName(userChange.getName());
     }
 
     @DeleteMapping("/user{id}")
