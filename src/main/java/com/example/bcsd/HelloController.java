@@ -2,6 +2,7 @@ package com.example.bcsd;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -20,4 +21,10 @@ public class HelloController {
 
     @GetMapping("/introduce")
     public String introduce() { return "introduce"; }
+
+    @ResponseBody
+    @GetMapping(value = "/introduce", params = "name") // 파라미터 구분
+    public String introduce2(@RequestParam("name") String myName) { // name 입력받기
+        return "안녕하세요 제 이름은" + myName + "입니다!";
+    }
 }
