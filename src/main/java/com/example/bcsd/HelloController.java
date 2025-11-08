@@ -18,7 +18,6 @@ public class HelloController {
         return "hello";
     }
 
-    @ResponseBody
     @GetMapping("/introduce")
-    public String introduce() { return "안녕하세요 제 이름은 김도훈입니다!"; }
+    public String introduce() { return "introduce"; }
 }
