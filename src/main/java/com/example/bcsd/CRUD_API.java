@@ -31,8 +31,9 @@ public class CRUD_API {
             @RequestParam("age") int age,
             @RequestParam("name") String name)
     {
-        User user = new User(id, age, name);
-        userMap.put(id, user);
+        User user = userMap.get(id);
+        user.setAge(age);
+        user.setName(name);
     }
 
     @DeleteMapping("/user{id}")
