@@ -35,4 +35,9 @@ public class CRUD_API {
         userMap.put(id, user);
     }
 
+    @DeleteMapping("/user{id}")
+    public void deleteUser(@PathVariable("id") String id) {
+        userMap.remove(id);
+    }
+
 }
