@@ -21,18 +21,18 @@ public class CRUD_API {
     }
 
     @GetMapping("/user/{id}")
-    public User user(@PathVariable("id")  String id) {
+    public User user(@PathVariable("id") String id) {
         return userMap.get(id);
     }
 
-    @PostMapping("/user{id}")
-    public void getUser(@PathVariable("id") String id,
-                        @RequestParam("age") int age,
-                        @RequestParam("name") String name) {
-        User user = new User(id, age, name);
+    @PostMapping("/user/{id}")
+    public void getUser(
+            @PathVariable("id") String id,
+            @RequestBody User user)
+        {
         userMap.put(id, user);
-    }
-    
+        }
+
     @PutMapping("/user/{id}")
     public void setUser(
             @PathVariable("id") String id,
