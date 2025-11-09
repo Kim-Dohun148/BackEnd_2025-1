@@ -1,9 +1,12 @@
 package com.example.bcsd;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,8 +24,13 @@ public class CRUD_API {
     }
 
     @GetMapping("/user/{id}")
-    public User user(@PathVariable("id") String id) {
-        return userMap.get(id);
+    public ResponseEntity<User> getUser(@PathVariable("id") String id) {
+        User user = userMap.get(id);
+
+        if (user == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(user);
     }
 
     @PostMapping("/user/{id}")
@@ -42,7 +50,7 @@ public class CRUD_API {
         userMap.get(id).setName(userChange.getName());
     }
 
-    @DeleteMapping("/user{id}")
+    @DeleteMapping("/user/{id}")
     public void deleteUser(@PathVariable("id") String id) {
         userMap.remove(id);
     }
