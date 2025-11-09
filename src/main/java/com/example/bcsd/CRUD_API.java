@@ -1,15 +1,10 @@
 package com.example.bcsd;
 
 import jakarta.annotation.PostConstruct;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
 
 @RestController
 public class CRUD_API {
@@ -30,22 +25,21 @@ public class CRUD_API {
         if (user == null) {
             return ResponseEntity.notFound().build();
         }
+
         return ResponseEntity.ok(user);
     }
 
     @PostMapping("/user/{id}")
     public void getUser(
             @PathVariable("id") String id,
-            @RequestBody User user)
-        {
+            @RequestBody User user) {
         userMap.put(id, user);
         }
 
     @PutMapping("/user/{id}")
     public void setUser(
             @PathVariable("id") String id,
-            @RequestBody User userChange)
-    {
+            @RequestBody User userChange) {
         userMap.get(id).setAge(userChange.getAge());
         userMap.get(id).setName(userChange.getName());
     }
@@ -54,5 +48,4 @@ public class CRUD_API {
     public void deleteUser(@PathVariable("id") String id) {
         userMap.remove(id);
     }
-
 }
