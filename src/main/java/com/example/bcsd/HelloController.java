@@ -33,7 +33,7 @@ public class HelloController {
     @ResponseBody
     @GetMapping("/json")
     public User json() {
-        User person = new User(23, "김도훈");
+        User person = new User("1", 23, "김도훈");
         return person;
     }
 }
