@@ -1,5 +1,8 @@
-package com.example.bcsd;
+package com.example.bcsd.Controller;
 
+import com.example.bcsd.Model.Article;
+import com.example.bcsd.Model.Board;
+import com.example.bcsd.Model.Member;
 import jakarta.annotation.PostConstruct;
 import org.springframework.http.ResponseEntity;
 
