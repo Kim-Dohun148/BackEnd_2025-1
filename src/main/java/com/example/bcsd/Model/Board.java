@@ -1,4 +1,4 @@
-package com.example.bcsd;
+package com.example.bcsd.Model;
 
 public class Board {
     private int id;
