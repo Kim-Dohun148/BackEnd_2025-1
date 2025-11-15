@@ -1,16 +1,12 @@
-package com.example.bcsd.Controller;
+package com.example.bcsd;
 
-import com.example.bcsd.Model.Article;
-import com.example.bcsd.Model.Board;
-import com.example.bcsd.Model.Member;
-import com.example.bcsd.User;
 import jakarta.annotation.PostConstruct;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@org.springframework.stereotype.Repository
 public class Repository {
     private Map<String, Article> articleMap;
     private Map<String, Board> boardMap;
@@ -39,4 +35,5 @@ public class Repository {
 
         return ResponseEntity.ok(article);
     }
+
 }

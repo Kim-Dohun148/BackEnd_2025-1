@@ -1,4 +1,5 @@
-package com.example.bcsd.Model;
+package com.example.bcsd;
+
 
 public class Article {
     private int id;
@@ -29,27 +30,49 @@ public class Article {
     public int getId() {
         return id;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getWriterId() {
         return writerId;
     }
+    public void setWriterId(int writerId) {
+        this.writerId = writerId;
+    }
+
     public int getBoardId() {
         return boardId;
+    }
+    public void setBoardId(int boardId) {
+        this.boardId = boardId;
     }
 
     public String getTitle() {
         return title;
     }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public String getContent() {
         return content;
+    }
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getWriterDate() {
         return writerDate;
     }
+    public void setWriterDate(String writerDate) {
+        this.writerDate = writerDate;
+    }
 
     public String getReviseDate() {
         return reviseDate;
+    }
+    public void setReviseDate(String reviseDate) {
+        this.reviseDate = reviseDate;
     }
 }
