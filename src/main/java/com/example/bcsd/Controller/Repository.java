@@ -39,6 +39,4 @@ public class Repository {
 
         return ResponseEntity.ok(article);
     }
-
-
 }
