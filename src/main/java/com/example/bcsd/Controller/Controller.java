@@ -5,12 +5,20 @@ import com.example.bcsd.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+import java.util.List;
+
 @RestController
 public class Controller {
     private Service service;
 
     public Controller(Service service) {
         this.service = service;
+    }
+
+    @GetMapping("/articles")
+    public Collection<Article> getAllArticles() {
+        return service.getAllArticles();
     }
 
     @GetMapping("/articles/{id}")
