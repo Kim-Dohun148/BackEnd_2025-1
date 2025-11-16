@@ -14,4 +14,8 @@ public class Service {
     public ResponseEntity<Article> getArticles(String id) {
         return repository.getArticles(id);
     }
+
+    public void setArticles(String id, Article article) {
+        repository.setArticles(id, article);
+    }
 }
