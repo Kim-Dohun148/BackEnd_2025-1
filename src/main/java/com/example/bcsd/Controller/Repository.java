@@ -39,4 +39,7 @@ public class Repository {
         return ResponseEntity.ok(article);
     }
 
+    public void setArticles(String id, Article article) {
+        articleMap.put(id, article);
+    }
 }
