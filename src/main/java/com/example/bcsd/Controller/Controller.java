@@ -25,11 +25,17 @@ public class Controller {
         service.setArticles(id, article);
     }
 
-    @PutMapping("/user/{id}")
+    @PutMapping("/articles/{id}")
     public void putArticles(
             @PathVariable("id") String id,
             @RequestBody Article article) {
 
         service.putArticles(id, article);
     }
+
+    @DeleteMapping("/articles/{id}")
+    public void deleteArticles(@PathVariable("id") String id) {
+        service.deleteArticles(id);
+    }
+
 }
