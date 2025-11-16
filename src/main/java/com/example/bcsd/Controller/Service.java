@@ -18,4 +18,9 @@ public class Service {
     public void setArticles(String id, Article article) {
         repository.setArticles(id, article);
     }
+
+    public void putArticles(String id, Article article) {
+        repository.putArticles(id, article);
+    }
+
 }
