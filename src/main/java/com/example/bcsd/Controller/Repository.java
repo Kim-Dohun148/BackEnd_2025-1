@@ -42,4 +42,14 @@ public class Repository {
     public void setArticles(String id, Article article) {
         articleMap.put(id, article);
     }
+
+    public void putArticles(String id, Article article) {
+        articleMap.get(id).setId(article.getId());
+        articleMap.get(id).setWriterId(article.getWriterId());
+        articleMap.get(id).setBoardId(article.getBoardId());
+        articleMap.get(id).setTitle(article.getTitle());
+        articleMap.get(id).setContent(article.getContent());
+        articleMap.get(id).setWriterDate(article.getWriterDate());
+        articleMap.get(id).setReviseDate(article.getReviseDate());
+    }
 }
