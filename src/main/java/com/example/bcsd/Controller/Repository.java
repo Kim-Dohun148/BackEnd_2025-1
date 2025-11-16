@@ -52,4 +52,8 @@ public class Repository {
         articleMap.get(id).setWriterDate(article.getWriterDate());
         articleMap.get(id).setReviseDate(article.getReviseDate());
     }
+
+    public void deleteArticles(String id) {
+        articleMap.remove(id);
+    }
 }
