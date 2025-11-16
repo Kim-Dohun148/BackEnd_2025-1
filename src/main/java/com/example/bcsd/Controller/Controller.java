@@ -1,9 +1,9 @@
-package com.example.bcsd;
+package com.example.bcsd.Controller;
 
+import com.example.bcsd.Model.Article;
+import com.example.bcsd.User;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Controller {
@@ -16,5 +16,12 @@ public class Controller {
     @GetMapping("/articles/{id}")
     public ResponseEntity<Article> getArticles(@PathVariable("id") String id) {
         return service.getArticles(id);
+    }
+
+    @PostMapping("/user/{id}")
+    public void setArticles(
+            @PathVariable("id") String id,
+            @RequestBody Article article) {
+        service.setArticles(id, article);
     }
 }
