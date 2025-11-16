@@ -1,19 +1,25 @@
 package com.example.bcsd.Controller;
 
+import ch.qos.logback.core.model.Model;
 import com.example.bcsd.Model.Article;
-import com.example.bcsd.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-import java.util.List;
 
-@RestController
-public class Controller {
+@org.springframework.stereotype.Controller
+public class ArticleController {
     private Service service;
 
-    public Controller(Service service) {
+    public ArticleController(Service service) {
         this.service = service;
+    }
+
+    @GetMapping("/posts")
+    public String getAllPosts(Model model) {
+        Collection<Article> articles = service.getAllArticles();
+        model.addAttribute("articles", articles);
+        return "posts";
     }
 
     @GetMapping("/articles")
