@@ -18,10 +18,18 @@ public class Controller {
         return service.getArticles(id);
     }
 
-    @PostMapping("/user/{id}")
+    @PostMapping("/articles/{id}")
     public void setArticles(
             @PathVariable("id") String id,
             @RequestBody Article article) {
         service.setArticles(id, article);
+    }
+
+    @PutMapping("/user/{id}")
+    public void putArticles(
+            @PathVariable("id") String id,
+            @RequestBody Article article) {
+
+        service.putArticles(id, article);
     }
 }
