@@ -6,7 +6,9 @@ import com.example.bcsd.Model.Member;
 import jakarta.annotation.PostConstruct;
 import org.springframework.http.ResponseEntity;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @org.springframework.stereotype.Repository
@@ -27,6 +29,10 @@ public class Repository {
                 "2025/11/15",
                 ""
                 ));
+    }
+
+    public Collection<Article> getAllArticles() {
+        return articleMap.values();
     }
 
     public ResponseEntity<Article> getArticles(String id) {
