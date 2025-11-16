@@ -23,4 +23,7 @@ public class Service {
         repository.putArticles(id, article);
     }
 
+    public void deleteArticles(String id) {
+        repository.deleteArticles(id);
+    }
 }
