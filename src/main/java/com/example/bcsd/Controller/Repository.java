@@ -58,9 +58,7 @@ public class Repository {
     public Collection<Member> getAllMembers() {
         return memberMap.values();
     }
-
-
-
+    
     public ResponseEntity<Article> getArticles(String id) {
         Article article = articleMap.get(id);
 
