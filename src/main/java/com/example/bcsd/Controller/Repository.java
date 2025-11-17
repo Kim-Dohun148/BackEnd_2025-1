@@ -1,5 +1,6 @@
 package com.example.bcsd.Controller;
 
+import ch.qos.logback.core.model.Model;
 import com.example.bcsd.Model.Article;
 import com.example.bcsd.Model.Board;
 import com.example.bcsd.Model.Member;
@@ -29,11 +30,36 @@ public class Repository {
                 "2025/11/15",
                 ""
                 ));
+        articleMap.put("2", new Article(
+                2,
+                2,
+                2,
+                "제목2",
+                "내용2",
+                "2025/11/16",
+                ""
+        ));
+
+        boardMap = new HashMap<String, Board>();
+        boardMap.put("1", new Board(1, "자유게시판"));
+
+        memberMap = new HashMap<String, Member>();
+        memberMap.put("1", new Member(1, "회원1", "이메일", "비밀번호"));
     }
 
     public Collection<Article> getAllArticles() {
         return articleMap.values();
     }
+
+    public Collection<Board> getAllboards() {
+        return boardMap.values();
+    }
+
+    public Collection<Member> getAllMembers() {
+        return memberMap.values();
+    }
+
+
 
     public ResponseEntity<Article> getArticles(String id) {
         Article article = articleMap.get(id);
