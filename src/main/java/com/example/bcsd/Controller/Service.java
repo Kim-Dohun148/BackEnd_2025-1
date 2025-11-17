@@ -21,6 +21,11 @@ public class Service {
     public Collection<Member> getAllBoards() {
         return repository.getAllMembers();
     }
+    
+    public Collection<Member> getAllMembers() {
+        return repository.getAllMembers();
+    }
+
 
     public ResponseEntity<Article> getArticles(String id) {
         return repository.getArticles(id);
