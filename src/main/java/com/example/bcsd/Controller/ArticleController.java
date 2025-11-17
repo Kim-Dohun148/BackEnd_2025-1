@@ -1,6 +1,7 @@
 package com.example.bcsd.Controller;
 
-import ch.qos.logback.core.model.Model;
+import org.springframework.ui.Model;
+
 import com.example.bcsd.Model.Article;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +16,13 @@ public class ArticleController {
         this.service = service;
     }
 
+    @ResponseBody
     @GetMapping("/posts")
     public String getAllPosts(Model model) {
-        Collection<Article> articles = service.getAllArticles();
-        model.addAttribute("articles", articles);
+        model.addAttribute("articles", service.getAllArticles());
+        model.addAttribute("Boards", service.getAllBoards());
+        model.addAttribute("members", service.getAllMembers());
+
         return "posts";
     }
 
