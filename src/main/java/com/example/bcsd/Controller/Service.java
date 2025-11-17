@@ -1,10 +1,10 @@
 package com.example.bcsd.Controller;
 
 import com.example.bcsd.Model.Article;
+import com.example.bcsd.Model.Member;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Collection;
-import java.util.List;
 
 @org.springframework.stereotype.Service
 public class Service {
@@ -16,6 +16,10 @@ public class Service {
 
     public Collection<Article> getAllArticles() {
         return repository.getAllArticles();
+    }
+
+    public Collection<Member> getAllBoards() {
+        return repository.getAllMembers();
     }
 
     public ResponseEntity<Article> getArticles(String id) {
